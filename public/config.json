@@ -1,0 +1,154 @@
+{
+  "version": "2.0",
+  "layout": "vertical_flow",
+  "style": {
+    "deviceFill": "#111",
+    "deviceStroke": "#444",
+    "deviceStrokeWidth": 1,
+    "portLabelFontSize": 9,
+    "portLabelFill": "#ccc",
+    "deviceTitleFontSize": 11,
+    "deviceTitleFill": "#fff",
+    "cableWidth": 2,
+    "gridColor": "#222",
+    "gridStep": 20,
+    "bgColor": "#0a0a0a"
+  },
+  "units": [
+    {
+      "id": "tt1",
+      "name": "Turntable L",
+      "category": "source",
+      "ports": [
+        { "id": "tt1_gnd", "label": "GND", "side": "bottom", "xoff": 20, "yoff": 0, "type": "terminal", "signal": "ground" },
+        { "id": "tt1_l",   "label": "L",   "side": "bottom", "xoff": 50, "yoff": 0, "type": "rca",     "signal": "phono", "color": "#2196f3" },
+        { "id": "tt1_r",   "label": "R",   "side": "bottom", "xoff": 70, "yoff": 0, "type": "rca",     "signal": "phono", "color": "#f44336" }
+      ],
+      "init": { "x": 80,  "y": 40,  "w": 130, "h": 100 }
+    },
+    {
+      "id": "tt2",
+      "name": "Turntable R",
+      "category": "source",
+      "ports": [
+        { "id": "tt2_gnd", "label": "GND", "side": "bottom", "xoff": 20, "yoff": 0, "type": "terminal", "signal": "ground" },
+        { "id": "tt2_l",   "label": "L",   "side": "bottom", "xoff": 50, "yoff": 0, "type": "rca",     "signal": "phono", "color": "#2196f3" },
+        { "id": "tt2_r",   "label": "R",   "side": "bottom", "xoff": 70, "yoff": 0, "type": "rca",     "signal": "phono", "color": "#f44336" }
+      ],
+      "init": { "x": 280, "y": 40,  "w": 130, "h": 100 }
+    },
+    {
+      "id": "cdj1",
+      "name": "CDJ L",
+      "category": "source",
+      "ports": [
+        { "id": "cdj1_l", "label": "L", "side": "bottom", "xoff": 30, "yoff": 0, "type": "rca", "signal": "line", "color": "#2196f3" },
+        { "id": "cdj1_r", "label": "R", "side": "bottom", "xoff": 50, "yoff": 0, "type": "rca", "signal": "line", "color": "#f44336" }
+      ],
+      "init": { "x": 480, "y": 40,  "w": 110, "h": 80 }
+    },
+    {
+      "id": "cdj2",
+      "name": "CDJ R",
+      "category": "source",
+      "ports": [
+        { "id": "cdj2_l", "label": "L", "side": "bottom", "xoff": 30, "yoff": 0, "type": "rca", "signal": "line", "color": "#2196f3" },
+        { "id": "cdj2_r", "label": "R", "side": "bottom", "xoff": 50, "yoff": 0, "type": "rca", "signal": "line", "color": "#f44336" }
+      ],
+      "init": { "x": 660, "y": 40,  "w": 110, "h": 80 }
+    },
+    {
+      "id": "pc",
+      "name": "PC",
+      "category": "source",
+      "ports": [
+        { "id": "pc_l", "label": "L", "side": "bottom", "xoff": 20, "yoff": 0, "type": "rca", "signal": "line", "color": "#2196f3" },
+        { "id": "pc_r", "label": "R", "side": "bottom", "xoff": 40, "yoff": 0, "type": "rca", "signal": "line", "color": "#f44336" }
+      ],
+      "init": { "x": 80,  "y": 180, "w": 100, "h": 50 }
+    },
+    {
+      "id": "phone",
+      "name": "Smartphone",
+      "category": "source",
+      "ports": [
+        { "id": "phone_out", "label": "3.5mm", "side": "bottom", "xoff": 25, "yoff": 0, "type": "jack35", "signal": "line", "color": "#fff" }
+      ],
+      "init": { "x": 220, "y": 180, "w": 100, "h": 60 }
+    },
+    {
+      "id": "mic",
+      "name": "Microphone",
+      "category": "source",
+      "ports": [
+        { "id": "mic_out", "label": "XLR OUT", "side": "bottom", "xoff": 30, "yoff": 0, "type": "xlr", "signal": "mic", "color": "#ff9800" }
+      ],
+      "init": { "x": 360, "y": 180, "w": 110, "h": 65 }
+    },
+    {
+      "id": "mixer",
+      "name": "Rotary Mixer",
+      "category": "mixer",
+      "ports": [
+        { "id": "mix_phono1_l", "label": "PHONO1 L", "side": "top",    "xoff": 30,  "yoff": 0,   "type": "rca",  "signal": "phono", "color": "#2196f3" },
+        { "id": "mix_phono1_r", "label": "PHONO1 R", "side": "top",    "xoff": 50,  "yoff": 0,   "type": "rca",  "signal": "phono", "color": "#f44336" },
+        { "id": "mix_phono2_l", "label": "PHONO2 L", "side": "top",    "xoff": 90,  "yoff": 0,   "type": "rca",  "signal": "phono", "color": "#2196f3" },
+        { "id": "mix_phono2_r", "label": "PHONO2 R", "side": "top",    "xoff": 110, "yoff": 0,   "type": "rca",  "signal": "phono", "color": "#f44336" },
+        { "id": "mix_line1_l",  "label": "LINE1 L",  "side": "top",    "xoff": 150, "yoff": 0,   "type": "rca",  "signal": "line",  "color": "#2196f3" },
+        { "id": "mix_line1_r",  "label": "LINE1 R",  "side": "top",    "xoff": 170, "yoff": 0,   "type": "rca",  "signal": "line",  "color": "#f44336" },
+        { "id": "mix_line2_l",  "label": "LINE2 L",  "side": "top",    "xoff": 210, "yoff": 0,   "type": "rca",  "signal": "line",  "color": "#2196f3" },
+        { "id": "mix_line2_r",  "label": "LINE2 R",  "side": "top",    "xoff": 230, "yoff": 0,   "type": "rca",  "signal": "line",  "color": "#f44336" },
+        { "id": "mix_mic",      "label": "MIC",      "side": "left",   "xoff": 0,   "yoff": 55,  "type": "xlr",  "signal": "mic",   "color": "#ff9800" },
+        { "id": "mix_aux_l",    "label": "AUX L",    "side": "right",  "xoff": 0,   "yoff": 50,  "type": "rca",  "signal": "line",  "color": "#2196f3" },
+        { "id": "mix_aux_r",    "label": "AUX R",    "side": "right",  "xoff": 0,   "yoff": 70,  "type": "rca",  "signal": "line",  "color": "#f44336" },
+        { "id": "mix_master_l", "label": "MASTER L", "side": "bottom", "xoff": 80,  "yoff": 0,   "type": "rca",  "signal": "line",  "color": "#2196f3" },
+        { "id": "mix_master_r", "label": "MASTER R", "side": "bottom", "xoff": 100, "yoff": 0,   "type": "rca",  "signal": "line",  "color": "#f44336" },
+        { "id": "mix_booth_l",  "label": "BOOTH L",  "side": "bottom", "xoff": 140, "yoff": 0,   "type": "rca",  "signal": "line",  "color": "#2196f3" },
+        { "id": "mix_booth_r",  "label": "BOOTH R",  "side": "bottom", "xoff": 160, "yoff": 0,   "type": "rca",  "signal": "line",  "color": "#f44336" }
+      ],
+      "init": { "x": 40,  "y": 310, "w": 620, "h": 240 }
+    },
+    {
+      "id": "amp",
+      "name": "Power Amp",
+      "category": "amp",
+      "ports": [
+        { "id": "amp_in_l",  "label": "LINE IN L", "side": "top",    "xoff": 30, "yoff": 0,  "type": "rca",     "signal": "line",    "color": "#2196f3" },
+        { "id": "amp_in_r",  "label": "LINE IN R", "side": "top",    "xoff": 50, "yoff": 0,  "type": "rca",     "signal": "line",    "color": "#f44336" },
+        { "id": "amp_spk_l", "label": "L+",        "side": "bottom", "xoff": 30, "yoff": 0,  "type": "terminal", "signal": "speaker", "color": "#76ff03" },
+        { "id": "amp_spk_r", "label": "R+",        "side": "bottom", "xoff": 60, "yoff": 0,  "type": "terminal", "signal": "speaker", "color": "#76ff03" }
+      ],
+      "init": { "x": 200, "y": 610, "w": 280, "h": 100 }
+    },
+    {
+      "id": "spk",
+      "name": "Speakers",
+      "category": "output",
+      "ports": [
+        { "id": "spk_l_in", "label": "L+", "side": "top", "xoff": 30, "yoff": 0, "type": "terminal", "signal": "speaker", "color": "#76ff03" },
+        { "id": "spk_r_in", "label": "R+", "side": "top", "xoff": 70, "yoff": 0, "type": "terminal", "signal": "speaker", "color": "#76ff03" }
+      ],
+      "init": { "x": 240, "y": 770, "w": 120, "h": 70 }
+    }
+  ],
+
+  "rules": {
+    "phono_to_phono":  { "ok": true,  "note":  "RIAA補正対応 - 正しい接続" },
+    "line_to_line":    { "ok": true,  "note":  "レベル一致 - 正しい接続" },
+    "mic_to_mic":      { "ok": true,  "note":  "XLR接続 - 正しい接続" },
+    "ground_to_ground":{ "ok": true,  "note":  "GND接続 - ハムノイズ低減" },
+    "speaker_to_speaker": { "ok": true, "note": "スピーカー接続 - 正常" },
+    "phono_to_line":   { "ok": false, "reason": "PHONO出力は低レベル+RIAA補正済み。LINE入力に直接繋ぐと音量不足、低域強調で音質劣化" },
+    "line_to_phono":   { "ok": false, "reason": "LINE出力をPHONO入力に接続: RIAA補正が重複、音圧過大で歪む" },
+    "line_to_mic":     { "ok": false, "reason": "LINE→MIC: 過大入力でクリップ/歪み。アッテネータ(-20dBパッド)またはMIC入力仕様確認が必要" },
+    "mic_to_line":     { "ok": false, "reason": "MIC→LINE: レベル不足で小さい音。プリアンプが必要" },
+    "speaker_to_line": { "ok": false, "reason": "スピーカー端子から機器入力へ: 高出力電力信号により機器破損/火災の危険" }
+  },
+
+  "signal_flow": {
+    "source": ["tt1","tt2","cdj1","cdj2","pc","phone","mic"],
+    "mixer":  ["mixer"],
+    "amp":    ["amp"],
+    "output": ["spk"]
+  }
+}
