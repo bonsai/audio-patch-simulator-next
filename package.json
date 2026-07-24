@@ -5,11 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build",
+    "deploy": "next build && gh-pages -d dist"
   },
   "dependencies": {
     "next": "^15",
     "react": "^19",
     "react-dom": "^19"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

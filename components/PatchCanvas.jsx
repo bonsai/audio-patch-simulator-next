@@ -50,7 +50,7 @@ function validatePair(portMap, from, to, rules) {
   const key = (sf === 'phono' && st === 'phono') ? 'phono_to_phono'
     : (sf === 'line' && st === 'line') ? 'line_to_line'
     : (sf === 'mic' && st === 'mic') ? 'mic_to_mic'
-    : (sf === 'ground' && st === 'ground') ? 'ground_to_ground'
+    : (sf === 'ground' || st === 'ground') ? 'ground_to_ground'
     : (sf === 'speaker' && st === 'speaker') ? 'speaker_to_speaker'
     : (sf === 'phono' && (st === 'line' || st === 'mic')) ? 'phono_to_line'
     : ((sf === 'line' || sf === 'mic') && st === 'phono') ? 'line_to_phono'
@@ -75,6 +75,7 @@ const PatchCanvas = forwardRef(function PatchCanvas({ config, devices: initialDe
   const portMap = buildPortMap(devices);
   const rules = config?.rules || {};
   const style = config?.style || {};
+  const initDone = React.useRef(false);
 
   useImperativeHandle(ref, () => ({
     clearCables: () => { setCables([]); onMessage?.('配線をクリアしました', 'ok'); onPatchChange?.({ devices, cables: [] }); },
@@ -113,6 +114,35 @@ const PatchCanvas = forwardRef(function PatchCanvas({ config, devices: initialDe
 
   // デバイス更新
   useEffect(() => { setDevices(initialDevices); }, [initialDevices]);
+
+  // デフォルトパッチ自動読込
+  useEffect(() => {
+    if (initDone.current) return;
+    if (!config?.defaultPatch?.cables) return;
+    if (devices.length === 0) return;
+    initDone.current = true;
+    const pm = buildPortMap(devices);
+    const initCables = config.defaultPatch.cables.map((c, i) => {
+      const res = validatePair(pm, c.from, c.to, rules);
+      const isL = c.from.includes('_l') || c.to.includes('_l') || c.from.includes('l_in') || c.to.includes('l_in');
+      const isR = c.from.includes('_r') || c.to.includes('_r') || c.from.includes('r_in') || c.to.includes('r_in');
+      const isGround = pm[c.from]?.signal === 'ground' || pm[c.to]?.signal === 'ground';
+      let color = res.ok ? '#4caf50' : '#f44336';
+      if (isL && !isGround) color = '#2196f3';
+      if (isR && !isGround) color = '#f44336';
+      if (isGround) color = '#9e9e9e';
+      return {
+        id: `default_${i}`,
+        from: c.from,
+        to: c.to,
+        color,
+        ok: res.ok,
+        ground: isGround,
+        note: c.note,
+      };
+    });
+    setCables(initCables);
+  }, [config?.defaultPatch, devices.length]);
 
   // Device dragging
   const onDeviceDown = useCallback((e, dev) => {
