@@ -150,5 +150,28 @@
     "mixer":  ["mixer"],
     "amp":    ["amp"],
     "output": ["spk"]
+  },
+
+  "defaultPatch": {
+    "cables": [
+      { "from": "tt1_gnd", "to": "mix_phono1_l", "note": "GNDはPHONOシールドにまとめてもOK" },
+      { "from": "tt1_l",   "to": "mix_phono1_l" },
+      { "from": "tt1_r",   "to": "mix_phono1_r" },
+      { "from": "tt2_gnd", "to": "mix_phono2_l", "note": "GND共有" },
+      { "from": "tt2_l",   "to": "mix_phono2_l" },
+      { "from": "tt2_r",   "to": "mix_phono2_r" },
+      { "from": "cdj1_l",  "to": "mix_line1_l" },
+      { "from": "cdj1_r",  "to": "mix_line1_r" },
+      { "from": "cdj2_l",  "to": "mix_line2_l" },
+      { "from": "cdj2_r",  "to": "mix_line2_r" },
+      { "from": "pc_l",    "to": "mix_aux_l" },
+      { "from": "pc_r",    "to": "mix_aux_r" },
+      { "from": "phone_out","to": "mix_line1_l", "note": "3.5mm→RCA変換アダプタ使用想定" },
+      { "from": "mic_out",  "to": "mix_mic" },
+      { "from": "mix_master_l", "to": "amp_in_l" },
+      { "from": "mix_master_r", "to": "amp_in_r" },
+      { "from": "amp_spk_l", "to": "spk_l_in" },
+      { "from": "amp_spk_r", "to": "spk_r_in" }
+    ]
   }
 }
