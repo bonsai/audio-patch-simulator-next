@@ -153,6 +153,7 @@
   },
 
   "defaultPatch": {
+    "loaded": true,
     "cables": [
       { "from": "tt1_gnd", "to": "mix_phono1_l", "note": "GNDはPHONOシールドにまとめてもOK" },
       { "from": "tt1_l",   "to": "mix_phono1_l" },
